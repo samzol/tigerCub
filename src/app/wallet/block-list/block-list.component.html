@@ -1,0 +1,65 @@
+<app-header></app-header>
+<section class="main-container">
+<form class="form" role="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-8">
+        <h4 class="text-primary">Blockchain Info</h4>
+      </div>
+      <div class="col-4">
+        <div class="btn-toolbar float-right">
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="form-group col-12">
+          <div class="row">
+            <div class="col-lg-6" style="padding:0px;">
+              <h4 class="card-title text-primary mb-0">Results</h4>
+            </div>
+            <div class="col-lg-6" style="padding:0px;text-align:right;">
+              {{ blocks.length }} record(s) found
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <table class="table table-striped">
+                <thead style="background-color:#eaeded">
+                  <tr>
+                    <th style="width:50px;">Index</th>
+                    <th style="width:200px;">Timestamp</th>
+                    <th style="width:200px;">Hash</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngIf="blocks?.length == 0">
+                    <td colspan="6">No record</td>
+                  </tr>
+                  <tr *ngFor="let block of blocks | paginate: { itemsPerPage: 10, currentPage: p }">
+                    <td>{{block.index}}</td>
+                    <td>{{block.timestamp | date: 'dd/MM/yyyy'}}</td>
+                    <td>{{block.hash}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-12">
+          <div class="row">
+            <div class="col-lg-6" style="padding:0px;">
+              &nbsp;
+            </div>
+            <div class="col-lg-6" style="padding:0px;text-align:right;">
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+</section>

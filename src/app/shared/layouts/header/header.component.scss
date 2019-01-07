@@ -1,0 +1,17 @@
+$primary-color: blue;
+$font-color: black;
+$bg-color: white;
+$header-color: #eaeded;
+
+.navbar {
+    // opacity: 0.8;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav .dropdown-menu {
+    position: absolute;
+}
+
+.dropdown-item {
+    padding: 0.25rem 0.5rem;
+}

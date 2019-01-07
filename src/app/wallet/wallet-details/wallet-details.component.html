@@ -1,0 +1,28 @@
+<app-header></app-header>
+<section class="main-container">
+<form class="form" role="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+  <div class="container-fluid">
+    <div class="card col-lg-9 mx-auto">
+      <div class="card-body">
+        <h4 class="card-title text-primary">Wallet</h4>
+        <div class="card mb-2" style="padding:15px;">
+          <div class="card-body">
+            <div class="row">
+              <div class="form-group col-lg-12">
+                <label for="txtAddress">Wallet Address <i class="fa fa-asterisk text-danger"></i></label>
+                <input type="text" class="form-control status" id="txtAddress" name="txtAddress" [(ngModel)]="wallet.address" #address="ngModel"
+                    placeholder="Wallet Address" readonly>
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="txtBalance">Balance <i class="fa fa-asterisk text-danger"></i></label>
+                <input type="text" class="form-control status" id="txtBalance" name="txtBalance" [(ngModel)]="wallet.balance" #balance="ngModel"
+                    placeholder="Balance" readonly>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+</section>

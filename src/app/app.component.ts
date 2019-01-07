@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'tiger-cub';
+  currentWallet : any = {};
+
+    constructor(
+    ) { }
+
+    ngOnInit() { 
+        this.currentWallet = JSON.parse(localStorage.getItem('currentWallet'));
+    }
 }

@@ -1,0 +1,36 @@
+{
+    "swagger": "2.0",
+    "info": {
+       "version": "1.0.0",
+       "title": "Tiger Cub Coin API"
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "schemes": [
+       "http"
+    ],
+    "consumes": [
+       "application/json"
+    ],
+    "produces": [
+       "application/json"
+    ],
+    "paths": {
+       "GET /mine": {
+          "description": "Get Mining",
+          "summary": "Get mining"
+       },
+       "GET /blocks": {
+          "description": "Get blocks",
+          "summary": "Get blocks"
+       },
+       "GET /trans": {
+          "description": "Get trans",
+          "summary": "Get trans"
+       },
+       "GET /wallet": {
+          "description": "Get wallets",
+          "summary": "Get wallets"
+       }
+    }
+ }
